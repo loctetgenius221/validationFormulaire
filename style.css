@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f1f1f1;
+}
+
+.formulaire,
+.confirmation-contenu {
+  position: relative;
+  padding: 50px;
+  background: #fff;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-contenu {
+  text-align: center;
+}
+
+.confirmation-contenu h1 {
+  color: #ce0033;
+  font-size: 1.5em;
+}
+
+.formulaire h2 {
+  font-weight: 500;
+  border-left: 15px solid #ce0033;
+  line-height: 1em;
+  padding-left: 10px;
+  transition: 0.5s;
+  color: #333;
+}
+
+.formulaire .inputBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formulaire .inputBox label {
+  font-size: 1.2em;
+}
+
+.formulaire .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 15px;
+  outline: none;
+  border: 2px solid #555;
+  font-size: 1em;
+  color: #333;
+}
+
+.formulaire .inputBox input#bouton {
+  border: none;
+  background: #ce0033;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+.error {
+  color: red;
+}
