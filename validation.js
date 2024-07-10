@@ -56,6 +56,7 @@ formulaire.addEventListener("submit", function (e) {
 
   // Si toutes les validations passent,on soumet le formulaire
   if (estValid) {
-    window.location.href = "confirmation.html";
+    document.getElementById("formulaire").style.display = "none";
+    document.getElementById("confirmationMessage").style.display = "block";
   }
 });
