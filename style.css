@@ -15,7 +15,8 @@ body {
   background: #f1f1f1;
 }
 
-.formulaire {
+.formulaire,
+.confirmation-contenu {
   position: relative;
   padding: 50px;
   background: #fff;
@@ -24,6 +25,15 @@ body {
   flex-direction: column;
   gap: 20px;
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-contenu {
+  text-align: center;
+}
+
+.confirmation-contenu h1 {
+  color: #ce0033;
+  font-size: 1.5em;
 }
 
 .formulaire h2 {
