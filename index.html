@@ -7,27 +7,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="" class="formulaire">
+    <form action="" class="formulaire" id="formulaire">
       <h2 id="titre">Formulaire de validation JS</h2>
       <div class="inputBox">
         <label for="prenom">Prénom</label>
         <input type="text" placeholder="Prénom" id="prenom" />
+        <span id="errorPrenom" class="error"></span>
       </div>
       <div class="inputBox">
         <label for="nom">Nom</label>
         <input type="text" placeholder="Nom" id="nom" />
+        <span id="errorNom" class="error"></span>
       </div>
       <div class="inputBox">
         <label for="email">Adresse email</label>
         <input type="email" placeholder="email" id="email" />
+        <span id="errorEmail" class="error"></span>
       </div>
       <div class="inputBox">
         <label for="mot_de_passe">Mot de passe</label>
         <input type="password" placeholder="Mot de passe" id="mot_de_passe" />
+        <span id="errorMotDePasse" class="error"></span>
       </div>
       <div class="inputBox">
         <input type="submit" value="Soumettre" id="bouton" />
       </div>
     </form>
+
+    <script src="validation.js"></script>
   </body>
 </html>
