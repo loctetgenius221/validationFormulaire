@@ -52,6 +52,22 @@ body {
   gap: 5px;
 }
 
+.formulaire .hidden {
+  display: none;
+}
+
+.formulaire .valid {
+  border: 2px solid green;
+}
+
+.formulaire .error {
+  color: red;
+}
+
+.formulaire #bouton:disabled {
+  opacity: 0.5;
+}
+
 .formulaire .inputBox label {
   font-size: 1.2em;
 }

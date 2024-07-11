@@ -3,13 +3,13 @@
 let formulaire = document.getElementById("formulaire");
 
 // Validation progressive des champs
-// Dès que le champs perd le focus on appelle la fonction
-document.getElementById("prenom").addEventListener("blur", validatePrenom);
-document.getElementById("nom").addEventListener("blur", validateNom);
-document.getElementById("email").addEventListener("blur", validateEmail);
+// Dès que le champ est modifié, on appelle la fonction
+document.getElementById("prenom").addEventListener("input", validatePrenom);
+document.getElementById("nom").addEventListener("input", validateNom);
+document.getElementById("email").addEventListener("input", validateEmail);
 document
   .getElementById("mot_de_passe")
-  .addEventListener("blur", validateMotDePasse);
+  .addEventListener("input", validateMotDePasse);
 
 function validatePrenom() {
   let prenom = document.getElementById("prenom").value.trim();
@@ -17,13 +17,17 @@ function validatePrenom() {
   if (prenom.length < 3 || prenom.length > 15) {
     document.getElementById("errorPrenom").textContent =
       "Le prénom doit comporter entre 3 et 15 caractères.";
+    document.getElementById("prenom").classList.remove("valid");
     return false;
   } else if (!monRegex.test(prenom)) {
     document.getElementById("errorPrenom").textContent =
       "Le prénom ne doit comporter que des lettres.";
+    document.getElementById("prenom").classList.remove("valid");
     return false;
   } else {
     document.getElementById("errorPrenom").textContent = "";
+    document.getElementById("prenom").classList.add("valid");
+    document.getElementById("nomBox").classList.remove("hidden");
     return true;
   }
 }
@@ -34,13 +38,17 @@ function validateNom() {
   if (nom.length < 3 || nom.length > 15) {
     document.getElementById("errorNom").textContent =
       "Le nom doit comporter entre 3 et 15 caractères.";
+    document.getElementById("nom").classList.remove("valid");
     return false;
   } else if (!monRegex.test(nom)) {
     document.getElementById("errorNom").textContent =
       "Le nom ne doit comporter que des lettres.";
+    document.getElementById("nom").classList.remove("valid");
     return false;
   } else {
     document.getElementById("errorNom").textContent = "";
+    document.getElementById("nom").classList.add("valid");
+    document.getElementById("emailBox").classList.remove("hidden");
     return true;
   }
 }
@@ -51,9 +59,12 @@ function validateEmail() {
   if (!emailRegex.test(email)) {
     document.getElementById("errorEmail").textContent =
       "L'adresse email n'est pas valide.";
+    document.getElementById("email").classList.remove("valid");
     return false;
   } else {
     document.getElementById("errorEmail").textContent = "";
+    document.getElementById("email").classList.add("valid");
+    document.getElementById("motDePasseBox").classList.remove("hidden");
     return true;
   }
 }
@@ -63,9 +74,13 @@ function validateMotDePasse() {
   if (motDePasse.length < 8) {
     document.getElementById("errorMotDePasse").textContent =
       "Le mot de passe doit comporter au moins 8 caractères.";
+    document.getElementById("mot_de_passe").classList.remove("valid");
     return false;
   } else {
     document.getElementById("errorMotDePasse").textContent = "";
+    document.getElementById("mot_de_passe").classList.add("valid");
+    document.getElementById("boutonBox").classList.remove("hidden");
+    document.getElementById("bouton").disabled = false;
     return true;
   }
 }
